@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123e36">
+  <meta name="description" content="משחק טריוויה חגיגי לכל המשפחה: 12 שאלות על ראש השנה, מנהגים וסמלים. משחקים, לומדים ומתחילים שנה מתוקה.">
+  <title>שנה של שאלות 🍎 טריוויה לראש השנה</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./game.js" defer></script>
+</head>
+<body>
+  <main class="game-shell">
+    <header class="masthead"><span class="brand">🍎 שנה של שאלות</span><span class="holiday">טריוויה לראש השנה</span></header>
+    <section id="welcome" class="panel welcome" aria-labelledby="welcome-title">
+      <div class="eyebrow">לכל המשפחה · בלי לחץ של זמן</div>
+      <div class="festival" aria-hidden="true">🍎 🍯</div>
+      <h1 id="welcome-title">כמה מתוקה<br>תהיה השנה שלכם?</h1>
+      <p class="intro">12 שאלות על ראש השנה.<br>על כל תשובה נכונה מקבלים 10 נקודות — ועל כל שאלה לומדים משהו קטן.</p>
+      <button id="start" class="primary" type="button">בואו נשחק <span aria-hidden="true">←</span></button>
+      <p class="small">אפשר לשחק לבד או להתייעץ יחד מסביב לשולחן.</p>
+    </section>
+
+    <section id="play" class="panel" hidden aria-labelledby="question">
+      <div class="game-meta"><span id="counter"></span><span class="score"><span id="score">0</span> נקודות</span></div>
+      <progress id="progress" value="0" max="12" aria-label="שאלות שנענו"></progress>
+      <div id="category" class="eyebrow question-category"></div>
+      <h2 id="question" tabindex="-1"></h2>
+      <div id="answers" class="answers" role="group" aria-labelledby="question"></div>
+      <div id="feedback" class="feedback" aria-live="polite" aria-atomic="true"></div>
+      <button id="next" class="primary" type="button" hidden>לשאלה הבאה <span aria-hidden="true">←</span></button>
+    </section>
+
+    <section id="results" class="panel results" hidden aria-labelledby="result-title">
+      <div class="eyebrow">השלמתם את החידון!</div>
+      <div class="festival" aria-hidden="true">🍯</div>
+      <h2 id="result-title" tabindex="-1"></h2>
+      <div class="final-score"><span id="total"></span><span>מתוך 120 נקודות</span></div>
+      <p id="summary"></p>
+      <p class="wish">שתהיה שנה טובה, מתוקה ומלאת סקרנות.</p>
+      <button id="restart" class="primary" type="button">עוד סיבוב?</button>
+      <details id="review"><summary>התשובות וההסברים</summary><ol id="review-list"></ol></details>
+    </section>
+    <footer>שנה טובה! <span aria-hidden="true">✦</span> מנהגים עשויים להשתנות בין קהילות ומשפחות.</footer>
+    <noscript><p class="panel">כדי לשחק צריך להפעיל JavaScript בדפדפן.</p></noscript>
+  </main>
+</body>
+</html>
